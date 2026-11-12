@@ -1,0 +1,143 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,microtype,geometry,enumitem,tabularx,array,hyperref,xcolor,needspace}
+\geometry{left=1.55cm,right=1.55cm,top=1.35cm,bottom=1.35cm}
+\hypersetup{colorlinks=true,urlcolor=blue!55!black,linkcolor=black,pdftitle={Nguyen Minh Tam - AI Engineer CV},pdfauthor={Nguyen Minh Tam}}
+\pagestyle{empty}\setlength{\parindent}{0pt}\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=1.35em,itemsep=3.5pt,topsep=3pt,parsep=0pt,partopsep=0pt}
+\newcommand{\secname}[1]{\vspace{12pt}\Needspace{4\baselineskip}{\normalsize\bfseries\MakeUppercase{#1}}\par\vspace{2pt}\hrule height .45pt\vspace{5pt}}
+\newcommand{\entry}[4]{\Needspace{3\baselineskip}\textbf{#1}\hfill {\small #2}\par\textit{#3}\hfill\textit{\small #4}\par}
+\newcommand{\proj}[3]{\Needspace{3\baselineskip}\textbf{#1}\hfill\href{#2}{\small GitHub}\par\vspace{1pt}\textit{#3}\par}
+\newcommand{\ts}[1]{\textbf{Technologies:} #1}
+\begin{document}
+\begin{center}
+{\fontsize{19}{22}\selectfont\bfseries NGUYEN MINH TAM}\par\vspace{3pt}
+{\normalsize AI Engineer}\par\vspace{3pt}
+\small +84 000 000 000 $\vert$ \href{mailto:your.email@example.com}{your.email@example.com} $\vert$
+\href{https://github.com/Tam1032}{GitHub} $\vert$
+\href{https://linkedin.com/in/tamdata/}{LinkedIn} $\vert$
+\href{https://scholar.google.com/citations?user=0h-r9SkAAAAJ}{Google Scholar}
+\end{center}
+
+\secname{Technical Skills}
+\begingroup\setlength{\parskip}{3pt}
+\textbf{Machine Learning:} Classification, Feature Engineering, Model Evaluation (Precision, Recall, F1, PR-AUC)\par
+\textbf{AI Frameworks:} Scikit-learn, LightGBM, PyTorch, TensorFlow, Transformers, LangChain, LangGraph\par
+\textbf{Programming Languages:} Python, SQL, R, C/C++\par
+\textbf{Data Processing \& Databases:} Pandas, NumPy, DuckDB, PostgreSQL, MySQL, dbt, Dagster\par
+\textbf{MLOps:} MLflow, Evidently (drift monitoring), Docker, Docker Compose, Git, Linux\par
+\textbf{Deployment \& APIs:} FastAPI, REST APIs, Gradio, Streamlit\par
+\textbf{Other AI:} Deep Learning, NLP, Computer Vision (YOLO, OCR), RAG, Agentic AI, LLMs (Llama, Qwen, OpenAI API, vLLM)\par
+\endgroup
+
+\secname{Languages} \textbf{English}: IELTS Academic 7.5.\par
+
+\secname{Industry Experience}
+\entry{Inspire Technology}{Mar 2024 -- Mar 2025}{AI Engineer}{Ho Chi Minh City, Vietnam}
+\begin{itemize}
+\item Developed \textbf{agentic AI workflows} for Vietnamese SEO content generation, refined generated content with feedback from SEO specialists.
+\item Built \textbf{RAG components} to ground generated content in retrieved sources, created evaluation datasets for retrieval quality and LLM responses.
+\item Fine-tuned and evaluated \textbf{Llama and Qwen} models for domain-specific content.
+\item Annotated surgical images, trained and validated object detection models for surgical tool detection.
+\end{itemize}
+
+\secname{Research Experience}
+\entry{Soongsil University}{Mar 2025 -- Sep 2026}{Graduate Research Assistant}{Seoul, South Korea}
+\begin{itemize}
+\item Applied \textbf{deep reinforcement learning} for service caching and task offloading in edge computing.
+\item Built Python simulations to benchmark strategies across workloads and network conditions.
+\item Presented results in research seminars and conference demos.
+\end{itemize}
+\vspace{2pt}
+\entry{AISIA Lab}{May 2023 -- Feb 2024}{Research Assistant}{Ho Chi Minh City, Vietnam}
+\begin{itemize}
+    \item Developed a \textbf{multimodal scene-graph matching} method for cheapfake detection.
+    \item Achieved \textbf{85.50\% accuracy} through experimental evaluation; results published in a \textbf{Springer journal}.
+\end{itemize}
+
+\secname{Selected Projects}
+\proj{FraudGuard --- Transaction Fraud Detection \& Risk Scoring}{https://github.com/Tam1032/FraudGuard}{Fraud risk scoring for card transactions on the IEEE-CIS payments dataset.}
+\begin{itemize}
+    \item Engineered behavioural features in \textbf{SQL} and trained a \textbf{LightGBM} model with an \textbf{Isolation Forest} anomaly score for the imbalanced fraud class.
+    \item Evaluated against a logistic-regression baseline using \textbf{PR-AUC} and precision/recall at an alert threshold; tracked runs in \textbf{MLflow}.
+    \item Served risk scores with \textbf{SHAP} reason codes via \textbf{FastAPI} and monitored drift with \textbf{Evidently}.
+\end{itemize}
+{\small\ts{Python, SQL, DuckDB, LightGBM, SHAP, MLflow, Evidently, FastAPI, Docker}}\par
+\vspace{9pt}
+
+\proj{ViBook-KIE --- Vietnamese Book Cover Information Extraction}{https://github.com/Tam1032/ViBook_KIE}{Extracts title, author, and publisher from Vietnamese book-cover images.}
+\begin{itemize}
+    \item Built and annotated a dataset of \textbf{7,875} Vietnamese book-cover images.
+    \item Combined OCR text and layout features to classify title, author, and publisher, achieving an \textbf{F1-score of 0.96}.
+    \item Deployed the extraction pipeline as a Dockerized \textbf{FastAPI} app for image uploads.
+\end{itemize}
+{\small\ts{Python, scikit-learn, VnCoreNLP, PaddleOCR, VietOCR, FastAPI, Docker}}\par
+\vspace{9pt}
+
+\Needspace{8\baselineskip}\proj{Stock Market ELT Pipeline}{https://github.com/Tam1032/ELT-Pipeline-Brazillian-stock}{Analytics pipeline for Brazilian stock-market data.}
+\begin{itemize}
+    \item Loaded raw Brazilian stock-market data into \textbf{PostgreSQL} and built analytics tables with \textbf{dbt}.
+    \item Orchestrated transformations as \textbf{Dagster} assets, tracking dependencies and data lineage.
+    \item Packaged the pipeline with \textbf{Docker Compose} for a reproducible local setup.
+\end{itemize}
+{\small\ts{Python, SQL, Dagster, dbt, PostgreSQL, Docker Compose}}\par
+\vspace{9pt}
+
+\Needspace{8\baselineskip}\proj{WeatherFormer --- Tool-Using LLM}{https://github.com/Tam1032/WeatherFormer}{Tool-use fine-tuning for weather queries.}
+\begin{itemize}
+    \item Generated \textbf{4.6K} synthetic Toolformer-style examples with \textbf{gpt-oss-20b} and \textbf{Open-Meteo} API responses, retaining \textbf{4.1K} after filtering.
+    \item Fine-tuned \textbf{Qwen2-7B} using 4-bit quantization and \textbf{LoRA} on a single 24 GB GPU.
+    \item On 175 held-out questions (31 unseen cities), the model called the weather API for \textbf{100\%} of weather questions, with \textbf{97.3\%} correct arguments.
+\end{itemize}
+{\small\ts{Python, PyTorch, Transformers, PEFT/LoRA, bitsandbytes, Gradio, Open-Meteo}}\par
+
+\secname{Education}
+\entry{Soongsil University}{2025 -- 2026}{MSc in Electronic Engineering}{Seoul, South Korea}
+\begin{itemize}
+\item GPA: \textbf{4.11/4.5}; coursework completed (24/24 credits).
+\item \textbf{Related courses:} Agentic AI, Artificial Intelligence, AI Mathematics, Robot Vision.
+\end{itemize}
+\vspace{2pt}
+\entry{University of Information Technology --- VNU-HCM}{2020 -- 2024}{BSc in Data Science}{Ho Chi Minh City, Vietnam}
+\begin{itemize}
+\item GPA: \textbf{9.26/10}; graduated early with high distinction (top 2\% of the cohort).
+\item \textbf{Academic Encouragement Scholarship} (Excellent level) for \textbf{6 consecutive semesters}.
+\item \textbf{Best Graduation Thesis}, scored \textbf{9.1/10} (highest graduation thesis score).
+\item \textbf{Related courses:} Machine Learning, Deep Learning, NLP, Medical Image Processing.
+\end{itemize}
+
+\secname{Selected Publications}
+\Needspace{4\baselineskip}\textbf{Joint Backbone and Exit Head Caching for Early-Exit DNN Inference at the Edge}\hfill 2026\par
+\textbf{Tam Minh Nguyen}, Khoi Anh Bui, and Myungsik Yoo.\par
+Submitted to \textit{IEEE Communications Letters}, under review.\par
+\vspace{5pt}
+\Needspace{4\baselineskip}\textbf{Joint Optimization of Computation Offloading, Model Caching and Exit Selection for DNN Inference Tasks}\hfill 2025\par
+\textbf{Tam Minh Nguyen} and Myungsik Yoo.\par
+\textit{2025 16th International Conference on ICT Convergence (ICTC)} (IEEE), pp.~1551--1553.\par
+DOI: \href{https://doi.org/10.1109/ICTC66702.2025.11388386}{10.1109/ICTC66702.2025.11388386}\par
+\vspace{5pt}
+\Needspace{4\baselineskip}\textbf{Multimodal Scene-Graph Matching for Cheapfakes Detection}\hfill 2025\par
+\textbf{Minh-Tam Nguyen}, Quynh-Thi Nguyen, Minh-Son Dao, and Binh-Thanh Nguyen.\par
+\textit{International Journal of Multimedia Information Retrieval} (Springer), Vol.~14, Article~17.\par
+DOI: \href{https://doi.org/10.1007/s13735-025-00365-9}{10.1007/s13735-025-00365-9}\par
+\vspace{5pt}
+\Needspace{4\baselineskip}\textbf{Key Information Extraction on Vietnamese Book Cover Images}\hfill 2023\par
+\textbf{Minh-Tam Nguyen}, Truong-Thinh Nguyen, Gia-Phu Pham Tran, Co-Thai Quach, and Trong-Hop Do.\par
+\textit{RIVF International Conference on Computing and Communication Technologies} (IEEE), pp.~395--400.\par
+DOI: \href{https://doi.org/10.1109/RIVF60135.2023.10471835}{10.1109/RIVF60135.2023.10471835}\par
+\vspace{5pt}
+\Needspace{4\baselineskip}\textbf{A Text-based Approach for Link Prediction on Wikipedia Articles}\hfill 2023\par
+Anh Hoang Tran, \textbf{Tam Minh Nguyen}, and Son Thanh Luu.\par
+\textit{IEEE 10th International Conference on Data Science and Advanced Analytics (DSAA)}, pp.~1--4.\par
+DOI: \href{https://doi.org/10.1109/DSAA60987.2023.10302627}{10.1109/DSAA60987.2023.10302627}\par
+
+\secname{Honors \& Awards}
+\begin{itemize}
+\item \textbf{Second Place}, SurgVU Surgical Tool Detection, MICCAI \hfill 2024
+\item \textbf{Third Place}, IEEE DSAA Data Science Competition (Wikipedia link prediction) \hfill 2023
+\item \textbf{Third Prize}, Vietnam Mathematical Olympiad for Students \hfill 2022
+\item \textbf{Student of Five Merits} at the City level \hfill 2022
+\end{itemize}
+
+\end{document}

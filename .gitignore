@@ -1,0 +1,6 @@
+.venv/
+output/
+data/
+.env
+__pycache__/
+courses.md
